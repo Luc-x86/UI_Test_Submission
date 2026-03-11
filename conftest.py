@@ -36,14 +36,5 @@ current_expiry_month = "04"
 current_expiry_year = "2026"
 current_cvv = "123"
 
-malecheck = "//input[@id='gender-male']"
-femalecheck = "//input[@id='gender-female']"
-name_field= "//input[@id='FirstName']"
-surname_field= "//input[@id='LastName']"
-email_field= "//input[@id='Email']"
-password_field= "//input[@id='Password']"
-confirm_password_field= "//input[@id='ConfirmPassword']"
-register_button= "//input[@id='register-button']"
-logout_button = "//a[@class='ico-logout']"
-register_button = "//a[@class='ico-register']"
+
 

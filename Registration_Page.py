@@ -6,34 +6,32 @@ class Registration:
         self.page = page
 
     def check_male(self):
-        self.page.locator(malecheck).click()
+        self.page.locator("//input[@id='gender-male']").click()
 
     def check_female(self):
-        self.page.locator(femalecheck).click()
+        self.page.locator("//input[@id='gender-female']").click()
 
     def name(self, myname):
-        self.page.locator(name_field).fill(myname)
+        self.page.locator("//input[@id='FirstName']").fill(myname)
 
     def surname(self, mysurname):
-        self.page.locator(surname_field).fill(mysurname)
+        self.page.locator("//input[@id='LastName']").fill(mysurname)
 
     def email(self, email):
-        self.page.locator(email_field).fill(email)
+        self.page.locator("//input[@id='Email']").fill(email)
 
     def password(self, word_of_pass):
-        self.page.locator(password_field).fill(word_of_pass)
-        self.page.locator(confirm_password_field).fill(word_of_pass)
+        self.page.locator("//input[@id='Password']").fill(word_of_pass)
+        self.page.locator("//input[@id='ConfirmPassword']").fill(word_of_pass)
 
     def register(self):
-        self.page.locator(register_button).click()
+        self.page.locator("//input[@id='register-button']").click()
 
     def verify(self):
         self.page.wait_for_selector("//input[@class='button-1 register-continue-button']")
         expect(self.page.locator("//div[@class='result']")).to_have_text("Your registration completed")
 
     def logout(self):
-        self.page.locator(logout_button).click()
-        self.page.wait_for_selector(register_button)
-        expect(self.page.locator(register_button)).to_have_text("Register")
-
-
+        self.page.locator("//a[@class='ico-logout']").click()
+        self.page.wait_for_selector("//a[@class='ico-register']")
+        expect(self.page.locator("//a[@class='ico-register']")).to_have_text("Register")
