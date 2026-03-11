@@ -1,0 +1,53 @@
+{
+  "info": {
+    "_postman_id": "f961e018-f365-4849-a5b6-bdc39e0bb954",
+    "name": "Assessment_3_submission",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50400156",
+    "_collection_link": "https://go.postman.co/collection/50400156-f961e018-f365-4849-a5b6-bdc39e0bb954?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response is not empty\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.length).to.be.above(0);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://webservice.toscacloud.com/api/v1/Coffees",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "toscacloud",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "Coffees"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
